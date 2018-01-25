@@ -7,7 +7,7 @@ const config = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css']
   },
   module: {
     rules: [
@@ -17,14 +17,18 @@ const config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'react', 'stage-2']
+            presets: ['env', 'react', 'stage-2', 'jest']
           }
         }
-      }
-    ]
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ],
+      },
+    ],
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   }

@@ -8,10 +8,12 @@ const SortList = ({ sorted }) =>
         <td>output</td>
       </tr>
     </thead>
-    { sorted.map((tuple, i) =>
-      <SortItem key={i} tuple={tuple}/>
-    )
-    }
+    <tbody>
+      { sorted.map((tuple, i) =>
+        <SortItem key={i} tuple={tuple}/>
+      )
+      }
+    </tbody>
   </table>
 
 export default SortList;

@@ -17,41 +17,15 @@ class App extends Component {
 
   render() {
     return (
-      <div style={styles.flexContainer}>
-
-        <div style={styles.itemBottom}>
-
-          <Form fetchSort={this.fetchSort}/>
-
-          <SortList sorted={this.state.sorted} />
-        </div>
+      <div className='App'>
+        <Form
+          fetchSort={this.fetchSort}
+        />
+        <SortList
+          sorted={this.state.sorted}
+        />
       </div>
     )
-  }
-}
-
-
-const styles = {
-  flexContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
-  item: {
-    flex: '1',
-    alignSelf: 'center',
-  },
-  itemTop: {
-    alignSelf: 'flex-start',
-  },
-  itemBottom: {
-    alignSelf: 'flex-end',
-  },
-  fixed: {
-    flex: 'none',
-    maxWidth: '50%',
   }
 }
 

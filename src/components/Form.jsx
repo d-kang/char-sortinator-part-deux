@@ -13,7 +13,6 @@ class Form extends Component {
 
   }
 
-
   handleFormSubmit = (e) => {
     e.preventDefault();
     const payload = this.state.input;
@@ -21,12 +20,19 @@ class Form extends Component {
     e.target[0].value = '';
   }
 
-
-
   render() {
     return (
-      <form action="" onSubmit={this.handleFormSubmit}>
-        <input type="text" onChange={this.handleInput} required />
+      <form
+        className='Form'
+        onSubmit={this.handleFormSubmit}
+      >
+        <input
+          className='Input'
+          type='text' onChange={this.handleInput}
+          required
+          maxlength='29'
+          placeholder='give me a string!'
+        />
         <button>charsortify!</button>
       </form>
     )
