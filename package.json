@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -p && node server",
-    "webpack": "webpack -wd",
+    "start": "webpack & node server",
     "devserver": "webpack-dev-server",
     "server": "nodemon server",
     "test": "jest --watch"
@@ -45,9 +44,19 @@
     "jest": "^22.1.4",
     "morgan": "^1.9.0",
     "style-loader": "^0.19.1",
+    "uglify-js-brunch": "^2.10.0",
     "webpack-dev-server": "^2.11.1"
   },
   "transform": {
     "^.+\\.jsx?$": "babel-jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ]
   }
 }
