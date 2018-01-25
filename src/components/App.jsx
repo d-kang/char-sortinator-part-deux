@@ -17,10 +17,10 @@ class App extends Component {
     const payload = this.state.input;
     console.log({ payload });
     e.target[0].value = '';
-    const url = 'http://localhost:3001/api/sort';
+    const url = 'http://localhost:3005/api/sort';
     const post = {
       method: 'POST',
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ payload }),
       headers: new Headers({
         'Content-Type': 'application/json'
       })
