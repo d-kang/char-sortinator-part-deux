@@ -30,7 +30,7 @@ class Form extends Component {
           className='Input'
           type='text' onChange={this.handleInput}
           required
-          maxlength='29'
+          maxLength='29'
           placeholder='give me a string!'
         />
         <button>charsortify!</button>
