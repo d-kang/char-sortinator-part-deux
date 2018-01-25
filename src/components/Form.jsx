@@ -26,7 +26,7 @@ class Form extends Component {
   render() {
     return (
       <form action="" onSubmit={this.handleFormSubmit}>
-        <input type="text" onChange={this.handleInput}/>
+        <input type="text" onChange={this.handleInput} required />
         <button>charsortify!</button>
       </form>
     )

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Form';
+import SortedTable from './Sorted';
+import fetchSortedString  from '../actions';
 
 class App extends Component {
   state = {
@@ -7,26 +9,17 @@ class App extends Component {
   }
 
   fetchSort = (payload) => {
-    const url = 'http://localhost:3005/api/sort';
-    const post = {
-      method: 'POST',
-      body: JSON.stringify({ payload }),
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      })
-    }
-    fetch(url, post)
-      .then(res => res.json())
+    fetchSortedString(payload)
       .then(res => {
-        this.setState({ sorted: [...this.state.sorted, res]});
-      })
-      .catch(console.error);
+        this.setState({ sorted: [...this.state.sorted, res] });
+      });
   }
 
   render() {
     return (
       <div>
         <Form fetchSort={this.fetchSort}/>
+        <SortedTable sorted={this.state.sorted} />
       </div>
     )
   }
