@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
+import Form from './Form';
 
 class App extends Component {
   state = {
-    input: '',
+    sorted: [],
   }
 
-  handleInput = (e) => {
-    console.log('val', e.target.value);
-    const input = e.target.value;
-    this.setState({ input });
-
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const payload = this.state.input;
-    console.log({ payload });
-    e.target[0].value = '';
+  fetchSort = (payload) => {
     const url = 'http://localhost:3005/api/sort';
     const post = {
       method: 'POST',
@@ -27,16 +17,16 @@ class App extends Component {
     }
     fetch(url, post)
       .then(res => res.json())
-      .then(res => console.log('res >>>', res))
+      .then(res => {
+        this.setState({ sorted: [...this.state.sorted, res]});
+      })
+      .catch(console.error);
   }
 
   render() {
     return (
       <div>
-        <form action="" onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleInput}/>
-          <button>charsortify!</button>
-        </form>
+        <Form fetchSort={this.fetchSort}/>
       </div>
     )
   }
