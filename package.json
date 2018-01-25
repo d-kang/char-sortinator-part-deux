@@ -7,7 +7,7 @@
     "webpack": "webpack -wd",
     "devserver": "webpack-dev-server",
     "server": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
+    "jest": "^22.1.4",
     "morgan": "^1.9.0",
     "webpack-dev-server": "^2.11.1"
   }
