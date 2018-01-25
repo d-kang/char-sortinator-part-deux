@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '../dist')));
 
-app.listen(port, () => console.log(`http://localhost:${port}`))
+app.listen(port, () => console.log(`http://localhost:${port}`));
 
 require('./routes');

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack -p && node server",
     "webpack": "webpack -wd",
     "devserver": "webpack-dev-server",
     "server": "nodemon server",
@@ -34,6 +35,10 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
     "jest": "^22.1.4",
     "morgan": "^1.9.0",
     "webpack-dev-server": "^2.11.1"

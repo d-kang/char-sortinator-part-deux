@@ -33,7 +33,6 @@ class App extends Component {
   render() {
     return (
       <div>
-
         <form action="" onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleInput}/>
           <button>charsortify!</button>
